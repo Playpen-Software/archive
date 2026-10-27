@@ -1,0 +1,75 @@
+body {
+    position: relative;
+    overflow: hidden;
+}
+
+.still_loading {
+    display: none;
+}
+
+#load_menu {
+    height: 100%;
+    width: 100%;
+    
+    gap: 15px;
+
+    background: color-mix(in srgb, var(--background-primary) 50%, transparent);
+    
+    font-family: "Mojangles", Arial, Helvetica, monospace;
+    color: var(--text-primary);
+    
+    overflow: hidden;
+    z-index: 2;
+}
+
+#load_menu_title {
+    display: block;
+    width: 50%;
+    height: auto;
+}
+
+#load_menu_copyright {
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 20px;
+}
+
+.loader {
+    width: 85px;
+    height: 50px;
+    --g1:conic-gradient(from  90deg at left   3px top   3px,#0000 90deg,#fff 0);
+    --g2:conic-gradient(from -90deg at bottom 3px right 3px,#0000 90deg,#fff 0);
+    background:var(--g1),var(--g1),var(--g1), var(--g2),var(--g2),var(--g2);
+    background-position: left,center,right;
+    background-repeat: no-repeat;
+    animation: l9 1s infinite;
+}
+
+@keyframes l9 {
+    0%   {background-size:25px 50% ,25px 50% ,25px 50%}
+    25%  {background-size:25px 100%,25px 50% ,25px 50%}
+    50%  {background-size:25px 50% ,25px 100%,25px 50%}
+    75%  {background-size:25px 50% ,25px 50% ,25px 100%}
+    100% {background-size:25px 50% ,25px 50% ,25px 50%}
+}
+
+.snowflake {
+    position: absolute;
+    top: -60px;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    animation: fall linear infinite;
+    z-index: 1;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-60px) translateX(0);
+    }
+    100% {
+        transform: translateY(calc(100vh + 60px)) translateX(10px);
+    }
+}

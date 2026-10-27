@@ -1,0 +1,28 @@
+{
+  "name": "flake-launcher",
+  "version": "0.1.0",
+  "description": "The Official Flake Client Launcher!",
+  "keywords": [
+    "Minecraft",
+    "Flake",
+    "Client"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SqueakyLlama1/flake-client.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Christian Bone",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "minecraft-java-core": "^4.2.8"
+  },
+  "devDependencies": {
+    "electron": "^42.5.0"
+  }
+}
